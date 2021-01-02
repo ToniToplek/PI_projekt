@@ -1,0 +1,102 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="DBModelStoreContainer" CdmEntityContainer="ArenaDB">
+    <EntitySetMapping Name="Blagajna">
+      <EntityTypeMapping TypeName="DBModel.Blagajna">
+        <MappingFragment StoreEntitySet="Blagajna">
+          <ScalarProperty Name="blagajna_id" ColumnName="blagajna_id" />
+          <ScalarProperty Name="naziv_blagajne" ColumnName="naziv_blagajne" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Dogadaj">
+      <EntityTypeMapping TypeName="DBModel.Dogadaj">
+        <MappingFragment StoreEntitySet="Dogadaj">
+          <ScalarProperty Name="cijena" ColumnName="cijena" />
+          <ScalarProperty Name="dogadaj_id" ColumnName="dogadaj_id" />
+          <ScalarProperty Name="naziv_dogadaja" ColumnName="naziv_dogadaja" />
+          <ScalarProperty Name="vrijeme_dogadaja" ColumnName="vrijeme_dogadaja" />
+          <ScalarProperty Name="dvorana_dvorana_id" ColumnName="dvorana_dvorana_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Dvorana">
+      <EntityTypeMapping TypeName="DBModel.Dvorana">
+        <MappingFragment StoreEntitySet="Dvorana">
+          <ScalarProperty Name="dvorana_id" ColumnName="dvorana_id" />
+          <ScalarProperty Name="naziv_dvorane" ColumnName="naziv_dvorane" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Korisnik">
+      <EntityTypeMapping TypeName="DBModel.Korisnik">
+        <MappingFragment StoreEntitySet="Korisnik">
+          <ScalarProperty Name="korisnik_id" ColumnName="korisnik_id" />
+          <ScalarProperty Name="uloga_uloga_id" ColumnName="uloga_uloga_id" />
+          <ScalarProperty Name="ime" ColumnName="ime" />
+          <ScalarProperty Name="prezime" ColumnName="prezime" />
+          <ScalarProperty Name="korisnicko_ime" ColumnName="korisnicko_ime" />
+          <ScalarProperty Name="lozinka" ColumnName="lozinka" />
+          <ScalarProperty Name="email" ColumnName="email" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Racun">
+      <EntityTypeMapping TypeName="DBModel.Racun">
+        <MappingFragment StoreEntitySet="Racun">
+          <ScalarProperty Name="racun_id" ColumnName="racun_id" />
+          <ScalarProperty Name="vrijeme_racuna" ColumnName="vrijeme_racuna" />
+          <ScalarProperty Name="blagajna_blagajna_id" ColumnName="blagajna_blagajna_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Radi_na">
+      <EntityTypeMapping TypeName="DBModel.Radi_na">
+        <MappingFragment StoreEntitySet="Radi_na">
+          <ScalarProperty Name="radi_na_id" ColumnName="radi_na_id" />
+          <ScalarProperty Name="korisnik_korisnik_id" ColumnName="korisnik_korisnik_id" />
+          <ScalarProperty Name="blagajna_blagajna_id" ColumnName="blagajna_blagajna_id" />
+          <ScalarProperty Name="pocetak_smjene" ColumnName="pocetak_smjene" />
+          <ScalarProperty Name="kraj_smjene" ColumnName="kraj_smjene" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Sektor">
+      <EntityTypeMapping TypeName="DBModel.Sektor">
+        <MappingFragment StoreEntitySet="Sektor">
+          <ScalarProperty Name="sektor_id" ColumnName="sektor_id" />
+          <ScalarProperty Name="naziv_sektora" ColumnName="naziv_sektora" />
+          <ScalarProperty Name="dvorana_dvorana_id" ColumnName="dvorana_dvorana_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Sjedalo">
+      <EntityTypeMapping TypeName="DBModel.Sjedalo">
+        <MappingFragment StoreEntitySet="Sjedalo">
+          <ScalarProperty Name="sjedalo_id" ColumnName="sjedalo_id" />
+          <ScalarProperty Name="red" ColumnName="red" />
+          <ScalarProperty Name="broj" ColumnName="broj" />
+          <ScalarProperty Name="sektor_sektor_id" ColumnName="sektor_sektor_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Sjedalo_rez">
+      <EntityTypeMapping TypeName="DBModel.Sjedalo_rez">
+        <MappingFragment StoreEntitySet="Sjedalo_rez">
+          <ScalarProperty Name="racun_racun_id" ColumnName="racun_racun_id" />
+          <ScalarProperty Name="sjedalo_rez_id" ColumnName="sjedalo_rez_id" />
+          <ScalarProperty Name="dogadaj_dogadaj_id" ColumnName="dogadaj_dogadaj_id" />
+          <ScalarProperty Name="sjedalo_sjedalo_id" ColumnName="sjedalo_sjedalo_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Uloga">
+      <EntityTypeMapping TypeName="DBModel.Uloga">
+        <MappingFragment StoreEntitySet="Uloga">
+          <ScalarProperty Name="uloga_id" ColumnName="uloga_id" />
+          <ScalarProperty Name="naziv_uloge" ColumnName="naziv_uloge" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

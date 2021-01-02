@@ -1,0 +1,282 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Blagajna">
+    <Key>
+      <PropertyRef Name="blagajna_id" />
+    </Key>
+    <Property Name="blagajna_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="naziv_blagajne" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Racun" Relationship="Self.fk_racun_blagajna1" FromRole="Blagajna" ToRole="Racun" />
+    <NavigationProperty Name="Radi_na" Relationship="Self.fk_radi_na_blagajna1" FromRole="Blagajna" ToRole="Radi_na" />
+  </EntityType>
+  <EntityType Name="Dogadaj">
+    <Key>
+      <PropertyRef Name="dogadaj_id" />
+    </Key>
+    <Property Name="dogadaj_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="naziv_dogadaja" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="vrijeme_dogadaja" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="dvorana_dvorana_id" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Dvorana" Relationship="Self.fk_dogadaj_dvorana1" FromRole="Dogadaj" ToRole="Dvorana" />
+    <NavigationProperty Name="Sjedalo_rez" Relationship="Self.fk_sjedalo_rez_dogadaj1" FromRole="Dogadaj" ToRole="Sjedalo_rez" />
+    <Property Name="cijena" Type="Int32" />
+  </EntityType>
+  <EntityType Name="Dvorana">
+    <Key>
+      <PropertyRef Name="dvorana_id" />
+    </Key>
+    <Property Name="dvorana_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="naziv_dvorane" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Dogadaj" Relationship="Self.fk_dogadaj_dvorana1" FromRole="Dvorana" ToRole="Dogadaj" />
+    <NavigationProperty Name="Sektor" Relationship="Self.fk_sektor_dvorana1" FromRole="Dvorana" ToRole="Sektor" />
+  </EntityType>
+  <EntityType Name="Korisnik">
+    <Key>
+      <PropertyRef Name="korisnik_id" />
+    </Key>
+    <Property Name="korisnik_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="uloga_uloga_id" Type="Int32" Nullable="false" />
+    <Property Name="ime" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="prezime" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="korisnicko_ime" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+    <Property Name="lozinka" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+    <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Uloga" Relationship="Self.fk_korisnik_uloga" FromRole="Korisnik" ToRole="Uloga" />
+    <NavigationProperty Name="Radi_na" Relationship="Self.fk_radi_na_korisnik1" FromRole="Korisnik" ToRole="Radi_na" />
+  </EntityType>
+  <EntityType Name="Racun">
+    <Key>
+      <PropertyRef Name="racun_id" />
+    </Key>
+    <Property Name="racun_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="vrijeme_racuna" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="blagajna_blagajna_id" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Blagajna" Relationship="Self.fk_racun_blagajna1" FromRole="Racun" ToRole="Blagajna" />
+    <NavigationProperty Name="Sjedalo_rez" Relationship="DBModel.fk_sjedalo_rez_racun1" FromRole="Racun" ToRole="Sjedalo_rez" />
+  </EntityType>
+  <EntityType Name="Radi_na">
+    <Key>
+      <PropertyRef Name="radi_na_id" />
+    </Key>
+    <Property Name="radi_na_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="korisnik_korisnik_id" Type="Int32" Nullable="false" />
+    <Property Name="blagajna_blagajna_id" Type="Int32" Nullable="false" />
+    <Property Name="pocetak_smjene" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="kraj_smjene" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="Blagajna" Relationship="Self.fk_radi_na_blagajna1" FromRole="Radi_na" ToRole="Blagajna" />
+    <NavigationProperty Name="Korisnik" Relationship="Self.fk_radi_na_korisnik1" FromRole="Radi_na" ToRole="Korisnik" />
+  </EntityType>
+  <EntityType Name="Sektor">
+    <Key>
+      <PropertyRef Name="sektor_id" />
+    </Key>
+    <Property Name="sektor_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="naziv_sektora" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="dvorana_dvorana_id" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Dvorana" Relationship="Self.fk_sektor_dvorana1" FromRole="Sektor" ToRole="Dvorana" />
+    <NavigationProperty Name="Sjedalo" Relationship="Self.fk_sjedalo_sektor1" FromRole="Sektor" ToRole="Sjedalo" />
+  </EntityType>
+  <EntityType Name="Sjedalo">
+    <Key>
+      <PropertyRef Name="sjedalo_id" />
+    </Key>
+    <Property Name="sjedalo_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="red" Type="Int32" Nullable="false" />
+    <Property Name="broj" Type="Int32" Nullable="false" />
+    <Property Name="sektor_sektor_id" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Sektor" Relationship="Self.fk_sjedalo_sektor1" FromRole="Sjedalo" ToRole="Sektor" />
+    <NavigationProperty Name="Sjedalo_rez" Relationship="Self.fk_sjedalo_rez_sjedalo1" FromRole="Sjedalo" ToRole="Sjedalo_rez" />
+  </EntityType>
+  <EntityType Name="Sjedalo_rez">
+    <Key>
+      <PropertyRef Name="sjedalo_rez_id" />
+    </Key>
+    <Property Name="sjedalo_rez_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="dogadaj_dogadaj_id" Type="Int32" Nullable="false" />
+    <Property Name="sjedalo_sjedalo_id" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Dogadaj" Relationship="Self.fk_sjedalo_rez_dogadaj1" FromRole="Sjedalo_rez" ToRole="Dogadaj" />
+    <NavigationProperty Name="Sjedalo" Relationship="Self.fk_sjedalo_rez_sjedalo1" FromRole="Sjedalo_rez" ToRole="Sjedalo" />
+    <Property Name="racun_racun_id" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Racun" Relationship="DBModel.fk_sjedalo_rez_racun1" FromRole="Sjedalo_rez" ToRole="Racun" />
+  </EntityType>
+  <EntityType Name="Uloga">
+    <Key>
+      <PropertyRef Name="uloga_id" />
+    </Key>
+    <Property Name="uloga_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="naziv_uloge" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Korisnik" Relationship="Self.fk_korisnik_uloga" FromRole="Uloga" ToRole="Korisnik" />
+  </EntityType>
+  <Association Name="fk_racun_blagajna1">
+    <End Role="Blagajna" Type="Self.Blagajna" Multiplicity="1" />
+    <End Role="Racun" Type="Self.Racun" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Blagajna">
+        <PropertyRef Name="blagajna_id" />
+      </Principal>
+      <Dependent Role="Racun">
+        <PropertyRef Name="blagajna_blagajna_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_radi_na_blagajna1">
+    <End Role="Blagajna" Type="Self.Blagajna" Multiplicity="1" />
+    <End Role="Radi_na" Type="Self.Radi_na" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Blagajna">
+        <PropertyRef Name="blagajna_id" />
+      </Principal>
+      <Dependent Role="Radi_na">
+        <PropertyRef Name="blagajna_blagajna_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_dogadaj_dvorana1">
+    <End Role="Dvorana" Type="Self.Dvorana" Multiplicity="1" />
+    <End Role="Dogadaj" Type="Self.Dogadaj" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Dvorana">
+        <PropertyRef Name="dvorana_id" />
+      </Principal>
+      <Dependent Role="Dogadaj">
+        <PropertyRef Name="dvorana_dvorana_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_sjedalo_rez_dogadaj1">
+    <End Role="Dogadaj" Type="Self.Dogadaj" Multiplicity="1" />
+    <End Role="Sjedalo_rez" Type="Self.Sjedalo_rez" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Dogadaj">
+        <PropertyRef Name="dogadaj_id" />
+      </Principal>
+      <Dependent Role="Sjedalo_rez">
+        <PropertyRef Name="dogadaj_dogadaj_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_sektor_dvorana1">
+    <End Role="Dvorana" Type="Self.Dvorana" Multiplicity="1" />
+    <End Role="Sektor" Type="Self.Sektor" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Dvorana">
+        <PropertyRef Name="dvorana_id" />
+      </Principal>
+      <Dependent Role="Sektor">
+        <PropertyRef Name="dvorana_dvorana_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_korisnik_uloga">
+    <End Role="Uloga" Type="Self.Uloga" Multiplicity="1" />
+    <End Role="Korisnik" Type="Self.Korisnik" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Uloga">
+        <PropertyRef Name="uloga_id" />
+      </Principal>
+      <Dependent Role="Korisnik">
+        <PropertyRef Name="uloga_uloga_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_radi_na_korisnik1">
+    <End Role="Korisnik" Type="Self.Korisnik" Multiplicity="1" />
+    <End Role="Radi_na" Type="Self.Radi_na" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Korisnik">
+        <PropertyRef Name="korisnik_id" />
+      </Principal>
+      <Dependent Role="Radi_na">
+        <PropertyRef Name="korisnik_korisnik_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_sjedalo_sektor1">
+    <End Role="Sektor" Type="Self.Sektor" Multiplicity="1" />
+    <End Role="Sjedalo" Type="Self.Sjedalo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Sektor">
+        <PropertyRef Name="sektor_id" />
+      </Principal>
+      <Dependent Role="Sjedalo">
+        <PropertyRef Name="sektor_sektor_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_sjedalo_rez_sjedalo1">
+    <End Role="Sjedalo" Type="Self.Sjedalo" Multiplicity="1" />
+    <End Role="Sjedalo_rez" Type="Self.Sjedalo_rez" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Sjedalo">
+        <PropertyRef Name="sjedalo_id" />
+      </Principal>
+      <Dependent Role="Sjedalo_rez">
+        <PropertyRef Name="sjedalo_sjedalo_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="ArenaDB" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Blagajna" EntityType="Self.Blagajna" />
+    <EntitySet Name="Dogadaj" EntityType="Self.Dogadaj" />
+    <EntitySet Name="Dvorana" EntityType="Self.Dvorana" />
+    <EntitySet Name="Korisnik" EntityType="Self.Korisnik" />
+    <EntitySet Name="Racun" EntityType="Self.Racun" />
+    <EntitySet Name="Radi_na" EntityType="Self.Radi_na" />
+    <EntitySet Name="Sektor" EntityType="Self.Sektor" />
+    <EntitySet Name="Sjedalo" EntityType="Self.Sjedalo" />
+    <EntitySet Name="Sjedalo_rez" EntityType="Self.Sjedalo_rez" />
+    <EntitySet Name="Uloga" EntityType="Self.Uloga" />
+    <AssociationSet Name="fk_racun_blagajna1" Association="Self.fk_racun_blagajna1">
+      <End Role="Blagajna" EntitySet="Blagajna" />
+      <End Role="Racun" EntitySet="Racun" />
+    </AssociationSet>
+    <AssociationSet Name="fk_radi_na_blagajna1" Association="Self.fk_radi_na_blagajna1">
+      <End Role="Blagajna" EntitySet="Blagajna" />
+      <End Role="Radi_na" EntitySet="Radi_na" />
+    </AssociationSet>
+    <AssociationSet Name="fk_dogadaj_dvorana1" Association="Self.fk_dogadaj_dvorana1">
+      <End Role="Dvorana" EntitySet="Dvorana" />
+      <End Role="Dogadaj" EntitySet="Dogadaj" />
+    </AssociationSet>
+    <AssociationSet Name="fk_sjedalo_rez_dogadaj1" Association="Self.fk_sjedalo_rez_dogadaj1">
+      <End Role="Dogadaj" EntitySet="Dogadaj" />
+      <End Role="Sjedalo_rez" EntitySet="Sjedalo_rez" />
+    </AssociationSet>
+    <AssociationSet Name="fk_sektor_dvorana1" Association="Self.fk_sektor_dvorana1">
+      <End Role="Dvorana" EntitySet="Dvorana" />
+      <End Role="Sektor" EntitySet="Sektor" />
+    </AssociationSet>
+    <AssociationSet Name="fk_korisnik_uloga" Association="Self.fk_korisnik_uloga">
+      <End Role="Uloga" EntitySet="Uloga" />
+      <End Role="Korisnik" EntitySet="Korisnik" />
+    </AssociationSet>
+    <AssociationSet Name="fk_radi_na_korisnik1" Association="Self.fk_radi_na_korisnik1">
+      <End Role="Korisnik" EntitySet="Korisnik" />
+      <End Role="Radi_na" EntitySet="Radi_na" />
+    </AssociationSet>
+    <AssociationSet Name="fk_sjedalo_sektor1" Association="Self.fk_sjedalo_sektor1">
+      <End Role="Sektor" EntitySet="Sektor" />
+      <End Role="Sjedalo" EntitySet="Sjedalo" />
+    </AssociationSet>
+    <AssociationSet Name="fk_sjedalo_rez_sjedalo1" Association="Self.fk_sjedalo_rez_sjedalo1">
+      <End Role="Sjedalo" EntitySet="Sjedalo" />
+      <End Role="Sjedalo_rez" EntitySet="Sjedalo_rez" />
+    </AssociationSet>
+    <AssociationSet Name="fk_sjedalo_rez_racun1" Association="DBModel.fk_sjedalo_rez_racun1">
+      <End Role="Racun" EntitySet="Racun" />
+      <End Role="Sjedalo_rez" EntitySet="Sjedalo_rez" />
+    </AssociationSet>
+  </EntityContainer>
+  <Association Name="fk_sjedalo_rez_racun1">
+    <End Type="DBModel.Racun" Role="Racun" Multiplicity="1" />
+    <End Type="DBModel.Sjedalo_rez" Role="Sjedalo_rez" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Racun">
+        <PropertyRef Name="racun_id" />
+      </Principal>
+      <Dependent Role="Sjedalo_rez">
+        <PropertyRef Name="racun_racun_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

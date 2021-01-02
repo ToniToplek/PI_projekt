@@ -1,0 +1,174 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="ArenaTicketShop.ArenaDB" Collapsed="true">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAAAAACIAgAAAAAAABAAAAEAAAAAIBSBAAAAAAAAA=</HashCode>
+      <FileName>ArenaDB.Context.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ArenaTicketShop.Blagajna" Collapsed="true">
+    <Position X="2.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAQBAAAAAAAAE=</HashCode>
+      <FileName>Blagajna.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ArenaTicketShop.Dogadaj" Collapsed="true">
+    <Position X="1.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAIAAAAAgAIAAAAAAIAAAAAAAAAAIAAAAAAAAgAAA=</HashCode>
+      <FileName>Dogadaj.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ArenaTicketShop.Dvorana" Collapsed="true">
+    <Position X="9" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAACAAAAAAAAAABAAAEgAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Dvorana.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ArenaTicketShop.Korisnik" Collapsed="true">
+    <Position X="11.5" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAEQAIAAECAgAAAAAAAAAAAAAAIAQAAAAAAAIAA=</HashCode>
+      <FileName>Korisnik.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ArenaTicketShop.Racun">
+    <Position X="13" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAAAAAAAAAgAAIAAAAAQAAAAAAAAAIAAAAAAAAAAAA=</HashCode>
+      <FileName>Racun.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ArenaTicketShop.Radi_na" Collapsed="true">
+    <Position X="10.75" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAEAEAgAAIAAAAAAAAAAAAAAAABAIAAAACAAAA=</HashCode>
+      <FileName>Radi_na.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ArenaTicketShop.Sektor" Collapsed="true">
+    <Position X="2.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAAAAAAAAAAAAAAAAIAAAAAAAQAAAAKAAAAAAAAAA=</HashCode>
+      <FileName>Sektor.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ArenaTicketShop.Sjedalo" Collapsed="true">
+    <Position X="7.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAACAAAAAAAAAIAAAAAAAABAAIAAAAAAAAADAA=</HashCode>
+      <FileName>Sjedalo.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ArenaTicketShop.Sjedalo_rez" Collapsed="true">
+    <Position X="12.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAAAAAAAAAAAAAQAAABAAAAEAAAAAAADBAAAAAAAAA=</HashCode>
+      <FileName>Sjedalo_rez.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ArenaTicketShop.Uloga" Collapsed="true">
+    <Position X="8" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAACAAAAAAAAAAAABAAAAAEAAAAA=</HashCode>
+      <FileName>Uloga.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ArenaTicketShop.BlagajnaDogadaj" Collapsed="true">
+    <Position X="4" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEAQACQAASAAABAKAACAgEACAAAAxAAAIAgAAAAAQAI=</HashCode>
+      <FileName>BlagajnaDogadaj.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ArenaTicketShop.BlagajnaSjedalo" Collapsed="true">
+    <Position X="5.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>UAAAAAhABCAEABAIACCAgAACAgGAQQAAAAACEAAAQAA=</HashCode>
+      <FileName>BlagajnaSjedalo.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ArenaTicketShop.BrziUnosSjedala" Collapsed="true">
+    <Position X="7.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAQAABCAgABAAAACAAAACAgAAAAAAAAAAIAAAQAA=</HashCode>
+      <FileName>BrziUnosSjedala.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ArenaTicketShop.Login" Collapsed="true">
+    <Position X="5.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAAAAACAAAACAAAAAAAAAAABgAAAQAA=</HashCode>
+      <FileName>Login.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ArenaTicketShop.NovaDvorana" Collapsed="true">
+    <Position X="7.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACAAAAABCAAABAAAACAAAgiAgAAAAAAAAAAAAAAQAA=</HashCode>
+      <FileName>NovaDvorana.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ArenaTicketShop.NoviDogadaj" Collapsed="true">
+    <Position X="0.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAABGAAAJBCAACAAgQKAgCAAAAAAAAAAAAAQAA=</HashCode>
+      <FileName>NoviDogadaj.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ArenaTicketShop.Program" Collapsed="true">
+    <Position X="2.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>Program.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ArenaTicketShop.ProsliDogadaji" Collapsed="true">
+    <Position X="4" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAgBCAAABAIAACAAAACAgAAAAIgIAAgAAAAQAA=</HashCode>
+      <FileName>ProsliDogadaji.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ArenaTicketShop.UrediDogadaj" Collapsed="true">
+    <Position X="2.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAABGAAAJBCAACAAgAKAgCAAAIAAAAAAAAAQAA=</HashCode>
+      <FileName>UrediDogadaj.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ArenaTicketShop.UrediDvorana" Collapsed="true">
+    <Position X="4" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIFACABgBDAkEBJCADDAIEACChAAwQEkQGAgICAAYAA=</HashCode>
+      <FileName>UrediDvorana.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ArenaTicketShop.UrediNazivDvorana" Collapsed="true">
+    <Position X="5.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACAAAAABCAAABAAAACAAAgiQgAAAAAAAAAAAAAAQQA=</HashCode>
+      <FileName>UrediNazivDvorana.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ArenaTicketShop.Properties.Resources" Collapsed="true">
+    <Position X="0.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAABEAAAAQAAAAAAAAAAAAAAAIA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ArenaTicketShop.Properties.Settings" Collapsed="true">
+    <Position X="4" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAIAAAAAABAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="System.Object" Collapsed="true">
+    <Position X="10.5" Y="0.75" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

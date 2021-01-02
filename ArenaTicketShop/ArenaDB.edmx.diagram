@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="b010b64961a24b948837c5ac9dbfb0ee" Name="Diagram1">
+        <EntityTypeShape EntityType="DBModel.Blagajna" Width="1.5" PointX="0.5" PointY="8.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBModel.Dogadaj" Width="1.5" PointX="3" PointY="3.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBModel.Dvorana" Width="1.5" PointX="1.125" PointY="5.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBModel.Korisnik" Width="1.5" PointX="1.5" PointY="13.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBModel.Racun" Width="1.5" PointX="0.75" PointY="2.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBModel.Radi_na" Width="1.5" PointX="3.75" PointY="10.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBModel.Sektor" Width="1.5" PointX="3.125" PointY="7.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBModel.Sjedalo" Width="1.5" PointX="6.375" PointY="6.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBModel.Sjedalo_rez" Width="1.5" PointX="6.5" PointY="3.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBModel.Uloga" Width="1.5" PointX="1.5" PointY="18.625" IsExpanded="true" />
+        <AssociationConnector Association="DBModel.fk_racun_blagajna1" ManuallyRouted="false" />
+        <AssociationConnector Association="DBModel.fk_radi_na_blagajna1" ManuallyRouted="false" />
+        <AssociationConnector Association="DBModel.fk_dogadaj_dvorana1" ManuallyRouted="false" />
+        <AssociationConnector Association="DBModel.fk_sjedalo_rez_dogadaj1" ManuallyRouted="false" />
+        <AssociationConnector Association="DBModel.fk_sektor_dvorana1" ManuallyRouted="false" />
+        <AssociationConnector Association="DBModel.fk_korisnik_uloga" ManuallyRouted="false" />
+        <AssociationConnector Association="DBModel.fk_radi_na_korisnik1" ManuallyRouted="false" />
+        <AssociationConnector Association="DBModel.fk_sjedalo_sektor1" ManuallyRouted="false" />
+        <AssociationConnector Association="DBModel.fk_sjedalo_rez_sjedalo1" ManuallyRouted="false" />
+        <AssociationConnector Association="DBModel.fk_sjedalo_rez_racun1" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
